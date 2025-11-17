@@ -74,26 +74,35 @@ This document tracks all fixes applied based on the QA Code Review.
     - Removes duplicate code across view components
     - File: `src/lib/calendarUtils.ts`
 
-## 🔄 Remaining Work
+## ✅ UI Component Updates Completed
 
-### Still To Do
+1. **Focus Trap Implementation** ✅
+   - Updated `Modal.tsx` component
+   - Added focus trap logic with Tab key handling
+   - Focuses first element on open
+   - Traps focus within modal
+   - File: `src/components/ui/Modal.tsx`
 
-1. **Focus Trap Implementation**
-   - Need to update `Modal.tsx` component
-   - Add focus trap logic with Tab key handling
+2. **Input Validation in EventForm** ✅
+   - Updated `EventForm.tsx` component
+   - Added validation for title, description, location lengths
+   - Added date validation (end after start)
+   - Real-time error display
+   - Uses constants from `constants.ts`
+   - File: `src/components/EventForm.tsx`
 
-2. **Input Validation in EventForm**
-   - Need to update `EventForm.tsx` component
-   - Add validation for title, description, location lengths
-   - Add date validation (end after start)
+3. **App.tsx Error Boundary Integration** ✅
+   - Wrapped App with ErrorBoundary
+   - AppContent component separated for error boundary
+   - ErrorBoundary catches all React errors
+   - File: `src/App.tsx`
 
-3. **App.tsx Error Boundary Integration**
-   - Need to wrap App with ErrorBoundary
-   - Update App.tsx to use ErrorBoundary component
-
-4. **View Components Update**
-   - Update DayView, MultiDayView, MonthView to use `calendarUtils`
-   - Replace duplicate `getCalendarColor` functions
+4. **View Components Update** ✅
+   - Updated DayView, MultiDayView, MonthView to use `calendarUtils`
+   - Replaced duplicate `getCalendarColor` functions
+   - All views now use shared `getCalendarColor` utility
+   - Uses constants for MIN_EVENT_HEIGHT_MINUTES
+   - Files: `src/components/views/DayView.tsx`, `src/components/views/MultiDayView.tsx`, `src/components/views/MonthView.tsx`
 
 ## 📝 Notes
 
